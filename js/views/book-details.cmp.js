@@ -43,7 +43,7 @@ export default {
             var pageCount = this.book.pageCount
             if (pageCount > 500) return 'Long reading'
             if (pageCount > 200) return 'Decent reading'
-            if (pageCount < 100) return 'Light reading'
+            if (pageCount < 200) return 'Light reading'
         }
     }
 }

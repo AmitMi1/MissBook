@@ -4,14 +4,14 @@ export default {
             <label>
             Filter By </label>
             <span class="price-range"> <b>Title: </b>
-            <input  type="text" v-model="filterBy.title" placeholder="Search..."> </span>
+            <input type="text" v-model="filterBy.title" placeholder="Search..."> </span>
             <!-- <span class="price-range"> <b>Price:</b> 0 -->
             <!-- <input @input="setFilter" type="range" v-model="filterBy.price" min="0" max="200" alt="value"> 200 </span> -->
             <span>Min:</span>
-            <input  type="number" v-model="filterBy.fromPrice" >
+            <input class="price-input" type="number" v-model="filterBy.fromPrice" placeholder="Min price" >
             <span>Max:</span>
-            <input  type="number" v-model="filterBy.toPrice" > 
-            <button @click="setFilter">Filter</button>
+            <input class="price-input" type="number" v-model="filterBy.toPrice" placeholder="Max price"> 
+            <button class="btn-filter" @click="setFilter"><i class="fa-solid fa-filter"></i></button>
         </section>
     `,
     data() {
@@ -19,14 +19,17 @@ export default {
             filterBy: {
                 title: '',
                 price: 200,
-                fromPrice: 0,
-                toPrice: 0
+                fromPrice: '',
+                toPrice: ''
             }
         };
     },
     methods: {
         setFilter() {
             this.$emit('filtered', { ...this.filterBy });
+            this.filterBy.title = ''
+            this.filterBy.toPrice = ''
+            this.filterBy.fromPrice = ''
         }
     }
 }

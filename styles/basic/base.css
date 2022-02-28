@@ -32,7 +32,7 @@ html {
   }
 
   button{
-    color: #000000;
+    /* color: #000000; */
     cursor: pointer;
     font-size: 25px;
     /* margin: 10px 5px 0px; */
@@ -48,4 +48,8 @@ html {
 
 i.fa-solid{
   color: var(--clr3);
+}
+
+.btn-back i, .btn-go i{
+color: var(--clr1);
 }

@@ -1,0 +1,26 @@
+.btn-filter{
+    font-size: 16px;
+    width: 50px;
+    height: 22px;
+    margin-inline-start: 10px;
+    border-radius: 5px;
+}
+
+.btn-filter i{
+    color: var(--clr1) !important;
+}
+
+.book-filter{
+    margin-top: 15px;
+    width: 80vw;
+    margin: 25px auto 0px auto;
+    text-align: center;
+}
+
+.price-input{
+    width: 80px;
+}
+
+.book-filter input{
+    margin-inline-end: 10px;
+}
