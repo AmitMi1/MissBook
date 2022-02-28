@@ -27,7 +27,7 @@ export default {
         selectBook(bookId) {
             const book = this.books.find(book => book.id === bookId)
             this.selectedBook = book
-            this.filterBy = null
+            // this.filterBy = null
             console.log(book)
         },
         setFilter(filterBy) {

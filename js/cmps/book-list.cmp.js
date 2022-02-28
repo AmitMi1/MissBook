@@ -21,11 +21,11 @@ export default {
     },
     methods: {
         remove(id) {
-            this.$emit('remove', id);
+            this.$emit('remove', id)
         },
         select(id) {
             console.log(id)
-            this.$emit('selected', id);
+            this.$emit('selected', id)
         }
     },
     computed: {}

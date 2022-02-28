@@ -18,18 +18,14 @@ export default {
         return {
             filterBy: {
                 title: '',
-                price: 200,
                 fromPrice: '',
                 toPrice: ''
             }
-        };
+        }
     },
     methods: {
         setFilter() {
-            this.$emit('filtered', { ...this.filterBy });
-            this.filterBy.title = ''
-            this.filterBy.toPrice = ''
-            this.filterBy.fromPrice = ''
+            this.$emit('filtered', { ...this.filterBy })
         }
     }
 }
