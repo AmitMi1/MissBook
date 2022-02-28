@@ -20,7 +20,7 @@ export default {
                 setTimeout(() => {
 
                     this.$emit('selected', bookId)
-                }, 500)
+                }, 650)
             } else this.$emit('selected', bookId)
         }
     },
