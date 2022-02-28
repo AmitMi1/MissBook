@@ -43,7 +43,7 @@ html {
   }
 
   .btn-back, .btn-go{
-    margin:  0 auto;
+    /* margin:  0 auto; */
 }
 
 i.fa-solid{

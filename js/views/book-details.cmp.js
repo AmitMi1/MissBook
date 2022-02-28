@@ -1,9 +1,9 @@
+import { bookService } from '../services/book-service.js'
 import longText from '../cmps/long-text.cmp.js'
 
 export default {
-    props: ['book'],
     template: `
-        <section class="book-details flex column">
+        <section v-if="book" class="book-details flex column">
             <div class="details-container">
             <h4>{{ book.title }}</h4>
             <long-text :txt="book.description" />
@@ -11,11 +11,23 @@ export default {
             <p><i class="fa-solid fa-gem"></i> {{ formattedDate }}</p>
             <p><i class="fa-solid fa-book"></i> {{ formattedLength }}</p>
             <p :class="setPriceColor">{{ formattedCurrency }}</p>
-        </div>
-        <img :src="bookImgUrl">
-        <button class="btn-back" @click="$emit('close')"><i class="fa-solid fa-angles-left"></i></button>
+            </div>
+            <img :src="bookImgUrl">
+            <router-link to="/book" class="btn-route">
+            <button class="btn-back"><i class="fa-solid fa-angles-left"></i></button>
+            </router-link>
         </section>
     `,
+    data() {
+        return {
+            book: null
+        }
+    },
+    created() {
+        const id = this.$route.params.bookId
+        bookService.get(id)
+            .then(book => this.book = book)
+    },
     components: {
         longText
     },
