@@ -53,3 +53,7 @@ i.fa-solid{
 .btn-back i, .btn-go i{
 color: var(--clr1);
 }
+
+.book-app{
+  height: 100vh;
+}

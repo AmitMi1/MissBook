@@ -37,3 +37,12 @@
   width: 70%;
 }
 
+.book-list h1{
+  width: 250px;
+  margin: 30px auto -10px auto;
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 1px solid;
+  font-style: italic;
+  font-weight: 100;
+}
