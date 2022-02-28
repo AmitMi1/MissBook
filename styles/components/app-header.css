@@ -18,6 +18,8 @@ a{
   /* max-height:550px; */
   min-width:300px;
   color:#eee;
+  box-shadow: 0px 10px 20px -9px rgba(0,0,0,0.75) inset;
+
   /* margin-bottom: -10px; */
 }
 .header:after{
@@ -86,7 +88,8 @@ a{
 }
 
 .info h1{
-    font-size:2em 
+    font-size:2em;
+    cursor: pointer;
 }
 .meta{
   font-style:italic;
@@ -131,10 +134,10 @@ a{
 
 .big-hero-text{
   font-size: 40px !important;
-  margin-top: 25vh;
+  margin-top: 20vh;
 }
 
 .big-hero:before{
   background:#1B2030 url(../../img/bg.jpg) 50% 0 no-repeat;
-  background-size:210vh !important;
+  background-size:220vh !important;
 }

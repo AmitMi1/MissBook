@@ -12,7 +12,7 @@ export default {
                 <div class="sides">
                
             <div class="info">
-            <h1>MISS BOOKS</h1>
+            <h1 title="Bookshelf" @click="showBooks()">MISS BOOKS</h1>
             <div class="meta">
             By Amit
             </div>
@@ -38,6 +38,9 @@ export default {
 
                 this.$refs.hero.classList.value = 'header'
             }
+        },
+        showBooks() {
+            return this.$router.push(`/book`)
         }
     },
     computed: {
