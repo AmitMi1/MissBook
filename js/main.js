@@ -1,11 +1,13 @@
+import { router } from './router.js'
 import bookApp from './views/book-app.cmp.js'
-import appHeader from './cmps/app-header.cmp.js';
+import appHeader from './cmps/app-header.cmp.js'
 
 const options = {
     template: `
         <section>
             <app-header />
-            <book-app />
+            <router-view />
+            <!-- <book-app /> -->
             <!-- <app-footer /> -->
         </section>
     `,
@@ -17,5 +19,6 @@ const options = {
 };
 
 const app = Vue.createApp(options)
+app.use(router)
 app.mount('#app')
 

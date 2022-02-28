@@ -1,22 +1,34 @@
 import { utilService } from './util-service.js'
+import { storageService } from './async-storage-service.js'
 
 const STORAGE_KEY = 'booksDB'
 _createBooks()
 
 export const bookService = {
     query,
-    remove,
+    get,
+    save,
+    // remove,
 }
 
 function query() {
-    return utilService.loadFromStorage(STORAGE_KEY)
+    return storageService.query(STORAGE_KEY)
 }
 
-function remove(bookId) {
-    const books = query()
-    const idx = books.findIndex(book => book.id === bookId)
-    books.splice(idx, 1)
-    utilService.saveToStorage(STORAGE_KEY, books)
+// function remove(bookId) {
+//     const books = query()
+//     const idx = books.findIndex(book => book.id === bookId)
+//     books.splice(idx, 1)
+//     utilService.saveToStorage(STORAGE_KEY, books)
+// }
+
+function get(bookId) {
+    return storageService.get(STORAGE_KEY, bookId)
+}
+
+function save(book) {
+    if (book.id) return storageService.put(STORAGE_KEY, book)
+    else return storageService.post(STORAGE_KEY, book)
 }
 
 function _createBooks() {
