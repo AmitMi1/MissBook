@@ -10,7 +10,7 @@ export default {
             <p :class="setPriceColor">{{ formattedCurrency }}</p>
         </div>
         <img :src="bookImgUrl">
-        <button @click="$emit('close')"><i class="fa-solid fa-angles-left"></i></button>
+        <button class="btn-back" @click="$emit('close')"><i class="fa-solid fa-angles-left"></i></button>
         </section>
     `,
     computed: {

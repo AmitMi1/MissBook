@@ -34,4 +34,14 @@ html {
   button{
     color: #000000;
     cursor: pointer;
+    font-size: 25px;
+    /* margin: 10px 5px 0px; */
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    
   }
+
+  .btn-back, .btn-go{
+    margin:  0 auto;
+}

@@ -14,7 +14,7 @@ a{
   align-items: flex-start;
   align-content: flex-start;
   height: 45vh;
-  min-height:300px;
+  min-height: 350px;
   /* max-height:550px; */
   min-width:300px;
   color:#eee;
@@ -79,7 +79,7 @@ a{
 }
 .info{
   width:100%;
-  padding:15% 10% 0 10%;
+  padding:25% 10% 25% 10%;
   text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,0.2)
 }
