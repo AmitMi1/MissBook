@@ -4,7 +4,7 @@ export default {
         <section class="book-preview">
            <h4>{{ book.title }}</h4>
            <div>
-           <img :src="bookImgUrl" title="Click for details" @Click="select(book.id)">
+           <img :src="bookImgUrl" title="Click for details" @Click="select(book.id, $event)">
            </div>
            <p>{{ formattedCurrency }}</p>
         </section>
@@ -14,8 +14,14 @@ export default {
     },
     created() { },
     methods: {
-        select(bookId) {
-            this.$emit('selected', bookId)
+        select(bookId, ev) {
+            console.log(ev);
+            if (ev.pointerType === 'touch') {
+                setTimeout(() => {
+
+                    this.$emit('selected', bookId)
+                }, 500)
+            } else this.$emit('selected', bookId)
         }
     },
     computed: {
