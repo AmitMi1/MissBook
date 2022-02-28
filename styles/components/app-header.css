@@ -1,6 +1,6 @@
 
 html,body{
-  height:120%;
+  /* height:120%; */
 }
 a{
   text-decoration:none
@@ -91,14 +91,11 @@ a{
 .meta{
   font-style:italic;
 }
-@keyframes grow{
+/* @keyframes grow{
   0% { transform: scale(1) translateY(0px)}
   50% { transform: scale(1.2) translateY(-400px)}
-}
-.content{  
-  padding:5% 10%;
-  text-align:justify
-}
+} */
+
 .btn{
   color:#333;
   border:2px solid;
@@ -109,6 +106,34 @@ a{
   font-weight:600
 }
 
-.twtr{
-  margin-top:100px
-}.btn.twtr:after{content:"\1F426";padding-left:5px}
+.header .nav-bar{
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  font-size: 18px;
+  /* font-weight: 600; */
+}
+
+.header .nav-bar a{
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.header .nav-bar a:hover,
+.router-link-exact-active {
+  color: var(--clr1) !important;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.big-hero{
+  height: 100vh !important;
+}
+
+.big-hero-text{
+  font-size: 50px !important;
+}
+
+.big-hero:before{
+  background:#1B2030 url(../../img/bg.jpg) 50% 0 no-repeat;
+  background-size:210vh !important;
+}

@@ -1,7 +1,15 @@
+import { eventBus } from '../services/eventBus-service.js'
+
 export default {
-    template:`
+    template: `
         <section class="home-page app-main">
-            <h3>Home sweet home</h3>
         </section>
     `,
+    created() {
+        eventBus.emit('home', true)
+    },
+    unmounted() {
+        eventBus.emit('home', false)
+
+    }
 }

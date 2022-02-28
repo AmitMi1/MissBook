@@ -1,8 +1,16 @@
+import { eventBus } from '../services/eventBus-service.js'
+
 export default {
     template: `
         <header class="app-header">
-            <div class="header">
-            <div class="sides">
+            <div ref="hero" class="header">
+            <nav class="nav-bar">
+                    <router-link to="/">Home</router-link> |
+                    <router-link to="/book">Books</router-link> |
+                    <router-link to="/about">About</router-link>
+                </nav>
+                <div class="sides">
+               
             <div class="info">
             <h1>MISS BOOKS</h1>
             <div class="meta">
@@ -13,5 +21,26 @@ export default {
             </div>
         </header>
     
-    `
+    `,
+    created() {
+        this.unsubscribe = eventBus.on('home', this.setHero)
+    },
+    unmounted() {
+    },
+    methods: {
+        setHero(isHome) {
+            console.log(this.$refs.hero.children[1].children[0].children[0]);
+            if (isHome) {
+                this.$refs.hero.children[1].children[0].children[0].classList.value += 'big-hero-text'
+                this.$refs.hero.classList.value += ' big-hero'
+            } else {
+                this.$refs.hero.children[1].children[0].children[0].classList.value = ''
+
+                this.$refs.hero.classList.value = 'header'
+            }
+        }
+    },
+    computed: {
+
+    },
 }
