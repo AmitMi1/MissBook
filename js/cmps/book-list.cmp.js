@@ -7,6 +7,7 @@ export default {
             <ul class="clean-list flex wrap space-evenly">
                 <li v-for="book in books" :key="book.id" class="book-preview-container" >
                    <book-preview :book="book" @selected="select(book.id)"/>
+                   <hr>
                    <div class="actions">
                        <!-- <button @click="remove(car.id)">X</button>
                        <button @click="select(car)">Details</button> -->

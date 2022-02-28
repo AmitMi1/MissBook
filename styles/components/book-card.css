@@ -21,9 +21,18 @@
     width: 300px;
     text-align: center;
     margin: 50px auto;
-  
-}
+    
+  }
+
 
 .book-preview h4{
   text-transform: capitalize;
+}
+
+
+.book-preview-container hr{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+  /* border-width: 0.01em; */
+  margin: 0 auto;
+  width: 70%;
 }

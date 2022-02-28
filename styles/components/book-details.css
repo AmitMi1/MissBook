@@ -58,3 +58,24 @@
 .green{
     color: green;
 }
+
+.book-details .details-container>*:not(:first-child){
+    margin-bottom: 20px;
+}
+
+.read-more{
+    font-size: 12px;
+    text-transform: capitalize;
+    width: 90px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: var(--clr2);
+    border: none;
+}
+
+.read-more:hover{
+    background-color: var(--clr3);
+    color: var(--clr2);
+}

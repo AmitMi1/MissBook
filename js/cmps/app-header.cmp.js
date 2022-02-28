@@ -6,7 +6,7 @@ export default {
             <div class="info">
             <h1>MISS BOOKS</h1>
             <div class="meta">
-            By Amit Mizrahi
+            By Amit
             </div>
             </div>
             </div>
