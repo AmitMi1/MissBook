@@ -1,20 +1,20 @@
 .book-details img{
     /* width: 200px; */
-    transform:
+    /* transform:
     perspective(800px)
     rotateY(25deg) scale(0.75)
-    rotateX(10deg);
+    rotateX(10deg); */
     /* scale(0.9); */
-  filter: blur(1px);
+  /* filter: blur(1px);
   opacity: 0.75;
   transition: 0.6s ease all;
   margin-top: 40px;
   border-radius: 5px;
-  transform: translate3d(0);
+  transform: translate3d(0); */
   
 }
 
-.book-details img:hover{
+.book-details img{
     box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.5);
     transform:
     perspective(800px)
@@ -24,6 +24,7 @@
     scale(0.9);
   filter: blur(0);
   opacity: 1;
+  margin-top: 20px;
 }
 
 .book-details{
