@@ -2,6 +2,7 @@ import { bookService } from '../services/book-service.js'
 import longText from '../cmps/long-text.cmp.js'
 import addReview from '../cmps/add-review.cmp.js'
 import bookReview from '../cmps/book-review.cmp.js'
+import { eventBus } from '../services/eventBus-service.js'
 
 export default {
     template: `
@@ -52,6 +53,8 @@ export default {
             bookService.removeReview(this.book.id, reviewId).then(() => {
                 var currReviewIdx = this.book.reviews.findIndex((review) => review.id === reviewId)
                 this.book.reviews.splice(currReviewIdx, 1)
+                eventBus.emit('show-msg', { txt: 'Removed succesfully', type: 'success' })
+
             })
         },
         addReview(newReview) {
@@ -60,6 +63,7 @@ export default {
                 if (!this.book.reviews) this.book.reviews = []
                 this.book.reviews.push(newReview)
                 this.onReview = !this.onReview
+                eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' })
             })
         },
     },

@@ -1,0 +1,20 @@
+.user-msg{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    /* background-color: var(--clr3); */
+    /* color: #ececec; */
+    padding: 10px;
+    z-index: 10;
+    border-radius: 10px;
+    color: var(--clr2);
+}
+
+.success {
+    background-color: var(--clr1);
+}
+
+.error {
+    background-color: red;
+    color: var(--clr2);
+}
