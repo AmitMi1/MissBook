@@ -8,7 +8,8 @@ export const bookService = {
     query,
     get,
     save,
-    // remove,
+    addReview,
+    removeReview,
 }
 
 function query() {
@@ -29,6 +30,22 @@ function get(bookId) {
 function save(book) {
     if (book.id) return storageService.put(STORAGE_KEY, book)
     else return storageService.post(STORAGE_KEY, book)
+}
+
+function addReview(bookId, review) {
+    return get(bookId).then(book => {
+        if (!book.reviews) book.reviews = [];
+        book.reviews.push(review)
+        save(book)
+    })
+}
+
+function removeReview(bookId, reviewId) {
+    return get(bookId).then(book => {
+        var currReviewIdx = book.reviews.findIndex(review => review.id === reviewId)
+        book.reviews.splice(currReviewIdx, 1)
+        save(book)
+    })
 }
 
 function _createBooks() {

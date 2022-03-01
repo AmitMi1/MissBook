@@ -1,0 +1,16 @@
+.book-review>*{
+    /* width: 90vw; */
+    /* text-align: center; */
+    margin: 5px 0;
+}
+
+.book-review button{
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    /* display: inline-block; */
+}
+
+.writer-name{
+    text-transform: capitalize;
+}
