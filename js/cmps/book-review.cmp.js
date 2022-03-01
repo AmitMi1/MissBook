@@ -14,6 +14,7 @@ export default {
                 <p>Review: {{ review.text }}
                   <button @click="deleteR">X</button>
                 </p>
+                <hr>
                 <!-- <long-text :txt="review.textarea"></long-text> -->
                <!-- </div> -->
 

@@ -15,6 +15,7 @@ export default {
             <p><i class="fa-solid fa-book symbol2"></i> {{ formattedLength }}</p>
             <p :class="setPriceColor">{{ formattedCurrency }}</p>
             </div>
+            <!-- <div class="reviews-container"> -->
             <img :src="bookImgUrl">
             <h4>REVIEWS</h4>
             <ul class="clean-list">
@@ -22,12 +23,15 @@ export default {
                 <book-review :review="review" @remove-review="remove"></book-review>
               </li>
             </ul>
+            <div>
             <button @click="onReview=!onReview"><i class="fa-solid fa-plus"></i></button>
-            <add-review v-if="onReview" @new-review="addReview"></add-review>
+            <!-- </div> -->
             <!-- <button @click="close" @keyup.esc="close">close</button> -->
             <router-link to="/book" class="btn-route">
-            <button class="btn-back"><i class="fa-solid fa-angles-left"></i></button>
+                <button class="btn-back"><i class="fa-solid fa-angles-left"></i></button>
             </router-link>
+            <add-review v-if="onReview" @new-review="addReview"></add-review>
+            </div>
         </section>
     `,
     data() {

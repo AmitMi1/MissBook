@@ -30,11 +30,11 @@
 }
 
 
-.book-preview-container hr{
+ hr{
   border-bottom: 1px solid rgba(0, 0, 0, 0.164);
   /* border-width: 0.01em; */
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
 }
 
 .book-list h1{
