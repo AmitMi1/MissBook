@@ -4,7 +4,6 @@
 
 /* COMPONENTS */
 
-@import 'components/screen.css';
 @import 'components/modal.css';
 @import 'components/app-header.css';
 @import 'components/book-card.css';
@@ -12,6 +11,8 @@
 @import 'components/book-filter.css';
 @import 'components/book-review.css';
 @import 'components/user-msg.css';
+@import 'components/add-book.css';
+@import 'components/screen.css';
 
 /* BASE */
 

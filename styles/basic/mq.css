@@ -27,4 +27,8 @@
   .big-hero:before{
     background-size:200% !important;
   }
+  .modal{
+    width: 85vw;
+    height: 85vh;
+}
 }

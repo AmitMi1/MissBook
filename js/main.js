@@ -8,7 +8,9 @@ const options = {
         <section>
             <app-header />
             <user-msg></user-msg>
+            <!-- <keep-alive> -->
             <router-view />
+            <!-- </keep-alive> -->
             <!-- <book-app /> -->
             <!-- <app-footer /> -->
         </section>

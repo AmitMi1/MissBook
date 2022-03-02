@@ -10,6 +10,8 @@ export const bookService = {
     save,
     addReview,
     removeReview,
+    searchBook,
+    addGoogleBook,
 }
 
 function query() {
@@ -46,6 +48,59 @@ function removeReview(bookId, reviewId) {
         book.reviews.splice(currReviewIdx, 1)
         save(book)
     })
+}
+
+function searchBook(searchTerm) {
+    return axios
+        .get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
+        .then(res => {
+            return res.data.items
+        })
+}
+
+function addGoogleBook(book) {
+    console.log(get(book.id));
+    // get(book.id)
+    //     .then(res => {
+    //         if (res) {
+    //             return Promise.reject(`exist ${book.id}`)
+    //         }
+    //     })
+    // if (get(book.id)) 
+    var newBook = {
+        id: book.id,
+        title: book.volumeInfo.title,
+        subtitle: book.volumeInfo.subtitle,
+        authors: book.volumeInfo.authors,
+        publishedDate: +book.volumeInfo.publishedDate,
+        description: book.volumeInfo.description,
+        pageCount: book.volumeInfo.pageCount,
+        categories: book.volumeInfo.categories,
+        thumbnail: book.volumeInfo.imageLinks.thumbnail,
+        language: book.volumeInfo.language,
+        listPrice: {
+            amount: null,
+            currencyCode: null,
+            isOnSale: null
+        }
+    }
+    if (!newBook.authors) newBook.authors = [utilService.makeLorem(2).trim(), utilService.makeLorem(2).trim()]
+    if (!newBook.categories) newBook.categories = [utilService.makeLorem(1).trim()]
+    if (!newBook.description) newBook.description = utilService.makeLorem(100).trim()
+    if (!newBook.pageCount) newBook.pageCount = utilService.getRndIntInc(25, 600)
+    if (!newBook.publishedDate) newBook.publishedDate = utilService.getRndIntInc(1950, 2022)
+    if (!newBook.subtitle) newBook.subtitle = utilService.makeLorem(30)
+    newBook.listPrice.amount = utilService.getRndIntInc(20, 200)
+    newBook.listPrice.currencyCode = 'USD'
+    newBook.listPrice.isOnSale = false
+    console.log(newBook)
+    if (newBook.publishedDate.length > 4) {
+        var year = newBook.publishedDate.slice(0, 4)
+        newBook.publishedDate = +year
+    }
+    return storageService.post(STORAGE_KEY, newBook)
+
+    // return Promise.resolve(newBook)
 }
 
 function _createBooks() {
@@ -498,6 +553,5 @@ function _createBooks() {
     }
     return books
 }
-
 
 

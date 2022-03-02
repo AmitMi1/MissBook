@@ -10,6 +10,8 @@
   border: 1px solid #e6e6e680;
   box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.5);
   transition: 0.4s ease-in-out transform;
+  width: 302px;
+  height: 402px;
   }
 
 .book-preview img:hover{

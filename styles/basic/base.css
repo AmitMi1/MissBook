@@ -50,10 +50,19 @@ html {
 color: var(--clr1);
 }
 
-.book-app{
-  height: 100vh;
+.book-details{
+  /* height: 120vh; */
 }
 
 span, p, h1, h2, h3, h4{
   cursor:default;
+}
+
+input{
+  border-radius: 5px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  /* margin: 0;
+  padding: 0; */
 }

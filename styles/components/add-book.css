@@ -1,0 +1,56 @@
+.add-book{
+   margin: 0 auto;
+   width: 300px;
+   text-align: center;
+ 
+}
+
+.modal .res-list{
+    color: var(--clr2);
+    margin-top: 75px;
+    line-height: 22px;
+}
+
+.modal p{
+    /* display: inline; */
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.btn-add-book{
+    margin: 10px auto;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    
+}
+
+.add-book button{
+
+}
+
+.add-book input{
+    /* margin-top: 11px; */
+    /* width: 180px; */
+    /* margin: 0 auto; */
+}
+
+.input-container{
+    background-color: rgba(0, 0, 0, 0.103);
+    box-shadow: 0px 0px 9px 2px rgb(0 0 0 / 30%);
+    /* padding: 10px; */
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.input-container button{
+    /* position: fixed; */
+    font-size: 18px;
+    height: 25px;
+    margin: 0 0 1px 10px;
+    /* margin: 0px 30px 0px 0; */
+    /* margin: 0 auto; */
+    line-height: 25px;
+}

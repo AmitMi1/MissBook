@@ -1,7 +1,7 @@
 .modal {
     width: 400px;
     height: 600px;
-    background-color: var(--clr2);
+    background-color: rgb(95, 95, 95);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -13,7 +13,8 @@
 }
 
 .modal>button {
-    align-self: flex-end;
+    position: fixed;
+    right: 0;
     color: white;
     border: 0;
     background-color: rgba(0, 0, 0, 0);

@@ -11,7 +11,7 @@ export default {
                 <div class="writer-name">Name: {{review.name}}</div>
                 <p>Rating: {{review.rating}}</p>
                 <p class="read-at">Read at: {{review.readAt}}</p>
-                <p>Review: {{ review.text }}
+                <p v-if="review.text.length">Review: {{ review.text }}
                   <button @click="deleteR">X</button>
                 </p>
                 <hr>

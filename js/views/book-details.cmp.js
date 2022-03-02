@@ -9,15 +9,16 @@ export default {
         <section v-if="book" class="book-details flex column center align-center">
             <div class="details-container">
             <h4>{{ book.title }}</h4>
+            <img :src="bookImgUrl">
+            <h4>description</h4>
             <long-text :txt="book.description" />
             <!-- <p>{{ book.description }}</p> -->
             <p><i class="fa-solid fa-gem symbol1"></i> {{ formattedDate }}</p>
             <p><i class="fa-solid fa-book symbol2"></i> {{ formattedLength }}</p>
             <p :class="setPriceColor">{{ formattedCurrency }}</p>
             </div>
-            <!-- <div class="reviews-container"> -->
-            <img :src="bookImgUrl">
-            <h4>REVIEWS</h4>
+            <!-- <div class="reviews-container flex column center align-center"> -->
+            <h4 class="review-head">reviews</h4>
             <ul class="clean-list">
               <li v-for="review in getReviews">
                 <book-review :review="review" @remove-review="remove"></book-review>
@@ -89,7 +90,8 @@ export default {
             // if()
             var bookYear = this.book.publishedDate
             if (currYear - bookYear > 10) return 'Vetern Book'
-            if (currYear - bookYear < 1) return 'New Book!'
+            else if (currYear - bookYear < 1) return 'New Book!'
+            else return 'Best seller!'
         },
         formattedLength() {
             var pageCount = this.book.pageCount
