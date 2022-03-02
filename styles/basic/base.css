@@ -60,9 +60,8 @@ span, p, h1, h2, h3, h4{
 
 input{
   border-radius: 5px;
-  height: 24px;
-  line-height: 24px;
-  font-size: 14px;
+  height: 25px;
+  /* font-size: 14px; */
   /* margin: 0;
   padding: 0; */
 }
