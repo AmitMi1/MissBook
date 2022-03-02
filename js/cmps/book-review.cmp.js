@@ -31,14 +31,12 @@ export default {
   },
   methods: {
     deleteR() {
-      console.log('delete');
       this.$emit('remove-review', this.review.id)
     },
 
   },
   computed: {
     getImgSrc(num) {
-      console.log(num);
       return '.././imgs/user_icon_' + num + '.png'
     }
   },

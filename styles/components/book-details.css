@@ -113,3 +113,32 @@
     color: brown;
 }
 
+.long-text p{
+    max-width: 500px;
+}
+
+.long-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.book-details nav{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.book-details nav a{
+    color: var(--clr1);
+    padding: 10px;
+    border-radius: 10px;
+  
+}
+
+.book-details nav a:hover{
+    color: var(--clr2);
+    background-color: rgb(0, 0, 0);
+    
+}

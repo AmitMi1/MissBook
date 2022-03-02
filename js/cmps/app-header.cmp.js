@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         setHero(isHome) {
-            console.log(this.$refs.hero.children[1].children[0].children[0]);
             if (isHome) {
                 this.$refs.hero.children[1].children[0].children[0].classList.value += 'big-hero-text'
                 this.$refs.hero.classList.value += ' big-hero'

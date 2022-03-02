@@ -16,10 +16,8 @@ export default {
     computed: {
         displayTxt() {
             if (!this.isLongMode && this.txt.length > 100) {
-                console.log('big txt');
                 return this.txt.slice(0, 100)
             } else {
-                console.log('short txt');
                 return this.txt
             }
         }, isReadMore() {

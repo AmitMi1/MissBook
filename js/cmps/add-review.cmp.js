@@ -3,7 +3,7 @@ import { utilService } from '../services/util-service.js'
 export default {
     template: `
         <section class="review-container">
-            <form v-on:submit.prevent="submit">
+            <form v-on:submit.prevent="submit" class="flex column align-center center">
                 <input type="text" v-model="review.name" ref="nameInput" placeholder="Your name..." required>
                 <input type="number" min="1" max="5" v-model="review.rating">
                 <input type="date" v-model="review.readAt" ref="dateInput" required>
@@ -29,18 +29,14 @@ export default {
     },
     mounted() {
         this.$refs.dateInput.valueAsDate = new Date()
-        this.$refs.dateInput.click()
-        // this.$refs.nameInput.focus()
-        // this.$refs.dateInput.focus()
+        this.$refs.nameInput.focus()
     },
     methods: {
         submit() {
-            // console.log(this.review, 'sent');
             this.review.text.trim()
             this.$emit('new-review', this.review)
         },
     },
     computed: {},
     unmounted() { },
-    // emits: ['new-review']
 }

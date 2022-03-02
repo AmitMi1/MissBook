@@ -15,7 +15,6 @@ export default {
     created() { },
     methods: {
         select(ev) {
-            console.log(ev);
             if (ev.pointerType === 'touch') {
                 setTimeout(() => {
                     return this.$router.push(`/book/${this.book.id}`)

@@ -1,6 +1,7 @@
 import { utilService } from '../services/util-service.js'
 import { bookService } from '../services/book-service.js'
 import { modalService } from '../services/modal-service.js'
+import { eventBus } from '../services/eventBus-service.js'
 
 export default {
     template: `
@@ -39,36 +40,29 @@ export default {
     },
     methods: {
         search() {
-            console.log(this.$refs);
-
             if (!this.searchTerm) return
             bookService.searchBook(this.searchTerm)
                 .then(res => {
                     this.searchTerm = ''
                     modalService.toggleModal(true, this.$refs.modal)
                     this.books = res
-                    console.log(this.books[0])
                 })
-
         },
         toggleScreen() {
             modalService.toggleModal(false, this.$refs.modal)
         },
         addBook(googleBook) {
-            console.log(bookService.get(googleBook.id));
-            bookService.get(googleBook.id)
+            bookService.checkExist(googleBook.id)
                 .then(res => {
                     if (!res) {
                         bookService.addGoogleBook(googleBook)
-                            .then(book => this.$emit('added', book))
-                    }
-                })
+                            .then(book => {
+                                this.$emit('added', book)
+                                eventBus.emit('show-msg', { txt: 'Book added', type: 'success' })
+                            })
+                    } else eventBus.emit('show-msg', { txt: 'Book already exists', type: 'success' })
 
-            // bookService.addGoogleBook(googleBook)
-            //     .then(book => this.$emit('added', book))
-            //     .catch(err => console.log(err))
-            // console.log(book)
-            // this.$emit('added', book)
+                })
         }
     },
     computed: {

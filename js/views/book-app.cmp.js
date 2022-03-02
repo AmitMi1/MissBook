@@ -3,13 +3,16 @@ import bookList from '../cmps/book-list.cmp.js'
 import bookDetails from './book-details.cmp.js'
 import bookFilter from '../cmps/book-filter.cmp.js'
 import addBook from '../cmps/add-book.cmp.js'
-
+import { eventBus } from '../services/eventBus-service.js'
 
 export default {
     template: `
         <section class="book-app">
-            <add-book @added="updateBooks"/> 
-            <book-filter @filtered="setFilter"></book-filter>
+            <div class="flex align-center center">
+            <button title="Search" class="btn-search-toggle" @click="onSearch = !onSearch"><i class="fa-brands fa-searchengin"></i></button>
+            </div>
+            <add-book v-if="onSearch" @added="updateBooks"/> 
+            <book-filter v-if="onSearch" @filtered="setFilter"></book-filter>
             <book-list v-if="!selectedBook" :books="booksToShow" @selected="selectBook" @selected:="selectBook(bookId)"></book-list>
             <book-details @close="selectedBook=null;" v-if="selectedBook" :book="selectedBook"></book-details>      
         </section>
@@ -25,6 +28,7 @@ export default {
             books: null,
             filterBy: null,
             selectedBook: null,
+            onSearch: false
         }
     },
     created() {
@@ -35,8 +39,6 @@ export default {
         selectBook(bookId) {
             const book = this.books.find(book => book.id === bookId)
             this.selectedBook = book
-            // this.filterBy = null
-            console.log(book)
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
@@ -45,8 +47,6 @@ export default {
             bookService.query()
                 .then(books => {
                     this.books = books
-                    console.log('update')
-
                 })
         },
     },

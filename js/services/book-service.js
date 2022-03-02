@@ -12,6 +12,7 @@ export const bookService = {
     removeReview,
     searchBook,
     addGoogleBook,
+    checkExist
 }
 
 function query() {
@@ -27,11 +28,27 @@ function query() {
 
 function get(bookId) {
     return storageService.get(STORAGE_KEY, bookId)
+        .then(book => {
+            return _setNextPrevBookId(book)
+        })
+}
+
+function checkExist(bookId) {
+    return storageService.get(STORAGE_KEY, bookId)
 }
 
 function save(book) {
     if (book.id) return storageService.put(STORAGE_KEY, book)
     else return storageService.post(STORAGE_KEY, book)
+}
+
+function _setNextPrevBookId(book) {
+    return storageService.query(STORAGE_KEY).then(books => {
+        const bookIdx = books.findIndex(currbook => currbook.id === book.id)
+        book.nextbookId = (books[bookIdx + 1]) ? books[bookIdx + 1].id : books[0].id
+        book.prevbookId = (books[bookIdx - 1]) ? books[bookIdx - 1].id : books[books.length - 1].id
+        return book
+    })
 }
 
 function addReview(bookId, review) {
@@ -59,14 +76,6 @@ function searchBook(searchTerm) {
 }
 
 function addGoogleBook(book) {
-    console.log(get(book.id));
-    // get(book.id)
-    //     .then(res => {
-    //         if (res) {
-    //             return Promise.reject(`exist ${book.id}`)
-    //         }
-    //     })
-    // if (get(book.id)) 
     var newBook = {
         id: book.id,
         title: book.volumeInfo.title,
@@ -93,7 +102,6 @@ function addGoogleBook(book) {
     newBook.listPrice.amount = utilService.getRndIntInc(20, 200)
     newBook.listPrice.currencyCode = 'USD'
     newBook.listPrice.isOnSale = false
-    console.log(newBook)
     if (newBook.publishedDate.length > 4) {
         var year = newBook.publishedDate.slice(0, 4)
         newBook.publishedDate = +year

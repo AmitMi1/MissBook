@@ -10,8 +10,6 @@ export default {
                    <book-preview :book="book" @selected="select(book.id)"/>
                    <hr>
                    <div class="actions">
-                       <!-- <button @click="remove(car.id)">X</button>
-                       <button @click="select(car)">Details</button> -->
                    </div>
                 </li>
             </ul>
@@ -25,7 +23,6 @@ export default {
             this.$emit('remove', id)
         },
         select(id) {
-            console.log(id)
             this.$emit('selected', id)
         }
     },

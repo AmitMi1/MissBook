@@ -4,7 +4,6 @@ export const modalService = {
 
 function toggleModal(state, elModal) {
     if (state) {
-        console.log(elModal)
         elModal.classList.value = 'modal fade-in'
         document.body.classList.add('modal-open')
     } else {
