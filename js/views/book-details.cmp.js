@@ -13,6 +13,8 @@ export default {
             <!-- <h4>description</h4> -->
             <long-text :txt="book.description" />
             <!-- <p>{{ book.description }}</p> -->
+            <p>By: {{ formatAuthors }}</p>
+            <p>Categories: {{ formatCategories }}</p>
             <p><i class="fa-solid fa-gem symbol1"></i> {{ formattedDate }}</p>
             <p><i class="fa-solid fa-book symbol2"></i> {{ formattedLength }}</p>
             <p :class="setPriceColor">{{ formattedCurrency }}</p>
@@ -62,7 +64,7 @@ export default {
             bookService.removeReview(this.book.id, reviewId).then(() => {
                 var currReviewIdx = this.book.reviews.findIndex((review) => review.id === reviewId)
                 this.book.reviews.splice(currReviewIdx, 1)
-                eventBus.emit('show-msg', { txt: 'Reviewr removed', type: 'success' })
+                eventBus.emit('show-msg', { txt: 'Review removed', type: 'success' })
 
             })
         },
@@ -109,6 +111,12 @@ export default {
         },
         getReviews() {
             return this.book.reviews
+        },
+        formatAuthors() {
+            return (this.book.authors.toString())
+        },
+        formatCategories() {
+            return (this.book.categories.toString())
         },
     },
     watch: {
