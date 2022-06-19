@@ -1,45 +1,42 @@
-.book-preview img{
-    cursor: pointer;
-    margin: 20px 0;
-    transform:
-    perspective(750px)
-    translate3d(0px, 0px, -250px)
-    rotateX(27deg)
-    scale(0.9, 0.9);
+.book-preview img {
+  cursor: pointer;
+  margin: 20px 0;
+  transform:
+    perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
   border-radius: 10px;
   border: 1px solid #e6e6e680;
   box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.5);
   transition: 0.4s ease-in-out transform;
   width: 302px;
   height: 402px;
-  }
+}
 
-.book-preview img:hover{
+.book-preview img:hover {
   transform: translate3d(0px, 0px, -250px);
 
 }
 
-.book-preview{
-    width: 300px;
-    text-align: center;
-    margin: 50px 0;
-    
-  }
+.book-preview {
+  width: 300px;
+  text-align: center;
+  margin: 50px 0;
+
+}
 
 
-.book-preview h4{
+.book-preview h4 {
   text-transform: capitalize;
 }
 
 
- hr{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+hr {
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.164); */
   /* border-width: 0.01em; */
   margin: 0 auto;
   width: 75%;
 }
 
-.book-list h1{
+.book-list h1 {
   width: 250px;
   margin: 30px auto -10px auto;
   text-align: center;
@@ -49,22 +46,22 @@
   font-weight: 100;
 }
 
-.btn-search-toggle{
-    color: var(--clr1);
-    background-color: transparent;
-    font-size: 28px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 5px;
-    z-index: 1;
+.btn-search-toggle {
+  color: var(--clr2);
+  background-color: rgb(66, 66, 66);
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  z-index: 1;
+  transition: all 400ms ease;
 }
 
-.btn-search-toggle:hover{
-    color: var(--clr2);
-    background-color: var(--clr1)
-    
+.btn-search-toggle:hover {
+  color: var(--clr2);
+  background-color: var(--clr1)
 }

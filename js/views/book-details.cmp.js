@@ -122,6 +122,7 @@ export default {
     watch: {
         bookId: {
             handler() {
+                // console.log(bookId);
                 this.loadBook()
             },
             immediate: true
